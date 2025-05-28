@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVSA (President's Volunteer Service Award) - Our NGO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px); 
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        }
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .navbar-logo-img {
+            max-height: 40px; 
+            width: auto;
+        }
+        .dropdown-menu {
+            min-width: 200px; 
+        }
+        .dropdown-menu a {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .mobile-dropdown-toggle.open .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .page-hero-bg { /* Generic hero for internal pages */
+            background-color: #0f766e; /* Tailwind teal-700 */
+            color: white;
+        }
+         .info-card {
+            background-color: #f9fafb; /* gray-50 */
+            border-left: 4px solid #14b8a6; /* teal-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800"> 
+
+    <header class="sticky top-0 z-50 shadow-lg">
+        <div class="h-0.5 bg-amber-400"></div> 
+        <div class="bg-slate-800 text-white">
+            <div class="container mx-auto px-4">
+                <nav class="flex items-center h-12"> 
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-start"> 
+                        <a href="index.html#home" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Home</a>
+                        <a href="index.html#about" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">About Us</a>
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap">
+                                Events <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="upcoming-events.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Upcoming Events</a> 
+                                <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Gallery</a> 
+                            </div>
+                        </div>
+                        <div class="relative dropdown-container">
+                             <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap">
+                                SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-56 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="service-trip-peru-2020.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Peru Spring '2020</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:flex items-center justify-center flex-shrink-0 px-4"> 
+                        <a href="index.html" class="inline-block"> 
+                            <img src="https://placehold.co/120x40/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo" class="navbar-logo-img">
+                        </a>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-end"> 
+                        <a href="pvsa.html" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">PVSA</a> 
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap"> 
+                                Stories <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute right-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden"> 
+                                <a href="index.html#blog" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Blog</a>
+                            </div>
+                        </div>
+                        <a href="index.html#contact" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Get Involved</a> 
+                        <a href="index.html#donate" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-1.5 px-3 rounded-md text-sm transition-colors duration-300 ml-2 whitespace-nowrap">DONATE</a> 
+                    </div>
+
+                    <div class="md:hidden flex w-full justify-between items-center">
+                        <a href="index.html" class="inline-block"> 
+                            <img src="https://placehold.co/100x36/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 36px;">
+                        </a>
+                        <button id="mobileMenuButton" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="h-0.5 bg-amber-400"></div> 
+
+        <div id="mobileMenu" class="md:hidden hidden bg-slate-800 text-white shadow-xl">
+            <div class="text-center py-3 border-b border-slate-700"> 
+                 <a href="index.html" class="inline-block"> 
+                     <img src="https://placehold.co/120x40/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 40px;">
+                </a>
+            </div>
+            <div class="py-2 space-y-1"> 
+                <a href="index.html#home" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Home</a>
+                <a href="index.html#about" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">About Us</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Events <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="upcoming-events.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Upcoming Events</a>
+                        <a href="gallery.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Gallery</a>
+                    </div>
+                </div>
+                 <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="service-trip-peru-2020.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Peru Spring '2020</a>
+                    </div>
+                </div>
+                <a href="pvsa.html" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">PVSA</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Stories <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="index.html#blog" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Blog</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Get Involved</a>
+                <a href="index.html#donate" class="block mx-4 my-3 bg-amber-500 hover:bg-amber-600 text-slate-900 text-center font-bold py-2.5 px-4 rounded-md shadow-md transition-colors duration-300">
+                    DONATE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero-bg py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in-element">PVSA</h1>
+                <p class="text-xl md:text-2xl text-amber-300 fade-in-element" style="transition-delay: 0.2s;">President's Volunteer Service Award</p>
+            </div>
+        </section>
+
+        <section id="pvsa-details" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <div class="mb-12 fade-in-element">
+                        <h2 class="text-3xl font-semibold text-teal-700 mb-4">What is the PVSA?</h2>
+                        <div class="text-gray-700 leading-relaxed space-y-4">
+                            <p>
+                                The President's Volunteer Service Award (PVSA) is a prestigious national honor that recognizes individuals, families, and groups who have demonstrated an outstanding commitment to volunteer service. Established in 2003, the PVSA is led by AmeriCorps and managed in partnership with Points of Light.
+                            </p>
+                            <p>
+                                This award celebrates Americans of all ages who dedicate significant time to serving their communities and country. It aims to inspire more people to answer the call to service and make a positive impact.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 fade-in-element" style="transition-delay: 0.2s;">
+                        <h2 class="text-3xl font-semibold text-teal-700 mb-4">Our Role as a Certifying Organization</h2>
+                        <div class="text-gray-700 leading-relaxed space-y-4">
+                            <p>
+                                [NGO Name] is proud to be an official Certifying Organization for the President's Volunteer Service Award. This means we have the authority to verify and award the PVSA to eligible volunteers who meet the required hours of service through our programs and initiatives.
+                            </p>
+                            <p>
+                                As a Certifying Organization, we play a vital role in recognizing the valuable contributions of our dedicated volunteers and encouraging continued community engagement.
+                            </p>
+                             <div class="flex justify-center my-6">
+                                <img src="https://placehold.co/300x150/e2e8f0/475569?text=PVSA+Official+Logo" alt="PVSA Logo" class="rounded-md shadow-md">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6 rounded-lg shadow-md mb-12 fade-in-element" style="transition-delay: 0.4s;">
+                        <h3 class="text-2xl font-semibold text-teal-700 mb-3">Eligibility & Award Levels</h3>
+                        <p class="text-gray-700 mb-4">Volunteers are recognized based on the number of service hours completed within a 12-month period. Award levels include Bronze, Silver, Gold, and the President's Lifetime Achievement Award for those with 4,000+ hours.</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><strong>Kids (5-10):</strong> Bronze (26-49 hrs), Silver (50-74 hrs), Gold (75+ hrs)</li>
+                            <li><strong>Teens (11-15):</strong> Bronze (50-74 hrs), Silver (75-99 hrs), Gold (100+ hrs)</li>
+                            <li><strong>Young Adults (16-25):</strong> Bronze (100-174 hrs), Silver (175-249 hrs), Gold (250+ hrs)</li>
+                            <li><strong>Adults (26+):</strong> Bronze (100-249 hrs), Silver (250-499 hrs), Gold (500+ hrs)</li>
+                        </ul>
+                        <p class="text-gray-700 mt-4">Service must be unpaid and not court-ordered. Hours must be completed within a 12-month period (can be a calendar year or a different 12-month cycle defined by our organization).</p>
+                    </div>
+
+                    <div class="mb-12 fade-in-element" style="transition-delay: 0.6s;">
+                        <h2 class="text-3xl font-semibold text-teal-700 mb-4">How to Earn PVSA with [NGO Name]</h2>
+                        <div class="text-gray-700 leading-relaxed space-y-4">
+                            <p>
+                                We encourage all our volunteers to track their service hours. If you volunteer with [NGO Name] through our various programs, including [mention 1-2 key programs like "local community outreach," "service learning trips," or "event support"], your hours can count towards the PVSA.
+                            </p>
+                            <ol class="list-decimal list-inside space-y-2 pl-4">
+                                <li><strong>Register as a Volunteer:</strong> Ensure you are registered in our volunteer system.</li>
+                                <li><strong>Track Your Hours:</strong> Diligently log all your volunteer hours with us. We will provide guidance on how to do this.</li>
+                                <li><strong>Meet Eligibility:</strong> Complete the required number of hours for your age group within a 12-month period.</li>
+                                <li><strong>Certification:</strong> At the end of the 12-month period (or as defined by our process), we will verify your hours and submit your application for the award.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="text-center fade-in-element" style="transition-delay: 0.8s;">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Questions About PVSA?</h2>
+                        <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+                            If you have any questions about the PVSA program, your eligibility, or how to track your hours with [NGO Name], please don't hesitate to reach out.
+                        </p>
+                        <a href="index.html#contact" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
+                            Contact Our Volunteer Coordinator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">NGO Name</h3>
+                    <p class="text-sm">Making a difference, one step at a time. Join our cause and help us build a brighter future for all.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#about" class="hover:text-teal-400 transition duration-300">About Us</a></li>
+                        <li><a href="upcoming-events.html" class="hover:text-teal-400 transition duration-300">Events</a></li>
+                        <li><a href="index.html#contact" class="hover:text-teal-400 transition duration-300">Get Involved</a></li> 
+                        <li><a href="#" class="hover:text-teal-400 transition duration-300">Privacy Policy</a></li> 
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> NGO Name. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart text-red-500"></i> by Your Name/Organization</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+        
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        dropdownContainers.forEach(container => {
+            const button = container.querySelector('button'); 
+            const menu = container.querySelector('.dropdown-menu');
+            if (button && menu) {
+                button.addEventListener('mouseenter', () => {
+                    menu.classList.remove('hidden');
+                });
+                container.addEventListener('mouseleave', () => { 
+                    menu.classList.add('hidden');
+                });
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    const isHidden = menu.classList.contains('hidden');
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) m.classList.add('hidden');
+                    });
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                    } else {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+        document.addEventListener('click', (e) => {
+            dropdownContainers.forEach(container => {
+                const menu = container.querySelector('.dropdown-menu');
+                if (menu && !menu.classList.contains('hidden') && !container.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                const content = toggle.nextElementSibling; 
+                const chevron = toggle.querySelector('.chevron-icon');
+                if (content) {
+                    content.classList.toggle('hidden');
+                    toggle.classList.toggle('open'); 
+                }
+            });
+        });
+
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+        const animatedElements = document.querySelectorAll('.fade-in-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => observer.observe(el));
+        
+        setTimeout(() => {
+            const allAnimatedElements = document.querySelectorAll('.fade-in-element');
+            allAnimatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                     el.classList.add('is-visible');
+                }
+            });
+        }, 100);
+    </script>
+</body>
+</html>

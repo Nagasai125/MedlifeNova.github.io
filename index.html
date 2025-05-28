@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our NGO - Making a Difference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px); 
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        }
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative; 
+        }
+        .hero-bg::before { 
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .about-card {
+            background-color: #f9fafb; 
+            border-left: 4px solid #14b8a6; 
+            padding: 1.5rem; 
+            border-radius: 0.5rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+        }
+        .about-card h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            color: #0f766e; 
+            margin-bottom: 0.75rem; 
+        }
+        .about-card h3 i {
+            margin-right: 0.75rem; 
+            color: #14b8a6; 
+        }
+        .navbar-logo-img {
+            max-height: 40px; 
+            width: auto;
+        }
+        .dropdown-menu {
+            min-width: 200px; 
+        }
+        .dropdown-menu a {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .mobile-dropdown-toggle.open .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800"> 
+
+    <header class="sticky top-0 z-50 shadow-lg">
+        <div class="h-0.5 bg-amber-400"></div> 
+
+        <div class="bg-slate-800 text-white">
+            <div class="container mx-auto px-4">
+                <nav class="flex items-center h-12"> 
+                    
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-start"> 
+                        <a href="#home" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Home</a>
+                        <a href="#about" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">About Us</a> 
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap"> 
+                                Events <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="#upcoming-events" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Upcoming Events</a>
+                                <a href="#gallery" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Gallery</a>
+                            </div>
+                        </div>
+                        <div class="relative dropdown-container">
+                             <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap">
+                                SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-56 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="#peru-spring-2020" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Peru Spring '2020</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:flex items-center justify-center flex-shrink-0 px-4"> 
+                        <a href="#" class="inline-block">
+                            <img src="../ngo-website/assets/images/logo.png" alt="NGO Logo" class="navbar-logo-img">
+                        </a>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-end"> 
+                        <a href="#pvsa" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">PVSA</a> 
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap"> 
+                                Stories <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute right-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden"> 
+                                <a href="#blog" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Blog</a>
+                            </div>
+                        </div>
+                        <a href="#contact" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Get Involved</a> 
+                        <a href="#donate" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-1.5 px-3 rounded-md text-sm transition-colors duration-300 ml-2 whitespace-nowrap">DONATE</a> 
+                    </div>
+
+                    <div class="md:hidden flex w-full justify-between items-center">
+                        <a href="#" class="inline-block">
+                            <img src="../ngo-website/assets/images/logo.png" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 36px;">
+                        </a>
+                        <button id="mobileMenuButton" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="h-0.5 bg-amber-400"></div> 
+
+        
+        <div id="mobileMenu" class="md:hidden hidden bg-slate-800 text-white shadow-xl">
+            <div class="text-center py-3 border-b border-slate-700"> 
+                 <a href="#" class="inline-block">
+                     <img src="../ngo-website/assets/images/logo.png" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 40px;">
+                </a>
+            </div>
+            <div class="py-2 space-y-1"> 
+                <a href="#home" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Home</a>
+                <a href="#about" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">About Us</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Events <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="#upcoming-events" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Upcoming Events</a>
+                        <a href="#gallery" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Gallery</a>
+                    </div>
+                </div>
+                 <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="#peru-spring-2020" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Peru Spring '2020</a>
+                    </div>
+                </div>
+                <a href="#pvsa" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">PVSA</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Stories <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="#blog" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Blog</a>
+                    </div>
+                </div>
+                <a href="#contact" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Get Involved</a>
+                <a href="#donate" class="block mx-4 my-3 bg-amber-500 hover:bg-amber-600 text-slate-900 text-center font-bold py-2.5 px-4 rounded-md shadow-md transition-colors duration-300">
+                    DONATE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero-bg text-white min-h-screen flex items-center justify-center" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ecf0f1?text=Inspiring+Change+Together');">
+        <div class="hero-content container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight"> 
+                Empowering Communities, <span class="block md:inline">Changing Lives.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-200"> 
+                Join us in our mission to create a better world through sustainable projects, dedicated action, and collective hope.
+            </p>
+            <a href="#involved" class="bg-teal-500 hover:bg-teal-400 text-white font-semibold py-4 px-10 rounded-lg shadow-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group">
+                Get Involved <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-28 bg-white"> 
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-teal-700 mb-5">Who We Are</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    A passionate collective dedicated to fostering tangible, positive change where it's needed most. We believe in the power of community and collaboration.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap lg:flex-nowrap items-center gap-12 lg:gap-16">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://placehold.co/800x600/81e6d9/2c7a7b?text=Our+Dedicated+Team" alt="Our Team at Work" class="rounded-xl shadow-2xl w-full h-auto object-cover fade-in-element">
+                </div>
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="about-card fade-in-element" style="transition-delay: 0.2s;">
+                        <h3><i class="fas fa-bullseye fa-fw"></i>Our Mission</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To foster sustainable development and empower vulnerable communities through innovative education, accessible healthcare, and equitable economic opportunities. We champion a holistic approach to create lasting, meaningful change.
+                        </p>
+                    </div>
+                    <div class="about-card fade-in-element" style="transition-delay: 0.4s;">
+                        <h3><i class="fas fa-eye fa-fw"></i>Our Vision</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We envision a world where every individual has the agency and opportunity to live a life of dignity, reach their full potential, and contribute to a just and thriving global community, free from poverty and inequity.
+                        </p>
+                    </div>
+                     <a href="#" class="inline-block mt-6 text-teal-600 hover:text-teal-700 font-semibold transition duration-300 group fade-in-element" style="transition-delay: 0.6s;">
+                        Discover Our Impact <i class="fas fa-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4 fade-in-element">Upcoming Events</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in-element" style="transition-delay: 0.2s;">
+                    Join us at our upcoming events and be part of the change.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in-element">
+                    <img src="https://placehold.co/600x400/a7f3d0/047857?text=Annual+Gala+2025" alt="Annual Gala" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Annual Charity Gala</h3>
+                        <p class="text-sm text-amber-600 font-semibold mb-2"><i class="far fa-calendar-alt mr-1"></i> October 26, 2025</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Our biggest fundraising event of the year. An evening of inspiration and community.
+                        </p>
+                        <a href="#" class="text-teal-500 hover:text-teal-600 font-medium transition duration-300">Learn More & Tickets</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in-element" style="transition-delay: 0.2s;">
+                    <img src="https://placehold.co/600x400/fecaca/991b1b?text=Community+Workshop" alt="Community Workshop" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Empowerment Workshop</h3>
+                         <p class="text-sm text-amber-600 font-semibold mb-2"><i class="far fa-calendar-alt mr-1"></i> November 12, 2025</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                           A hands-on workshop focused on skill development for local community members.
+                        </p>
+                        <a href="#" class="text-teal-500 hover:text-teal-600 font-medium transition duration-300">Details & Sign Up</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in-element" style="transition-delay: 0.4s;">
+                    <img src="https://placehold.co/600x400/bae6fd/0c4a6e?text=Volunteer+Day" alt="Volunteer Day" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Volunteer Day: Park Cleanup</h3>
+                         <p class="text-sm text-amber-600 font-semibold mb-2"><i class="far fa-calendar-alt mr-1"></i> December 5, 2025</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                           Join us for a day of community service as we clean and beautify our local park.
+                        </p>
+                        <a href="#" class="text-teal-500 hover:text-teal-600 font-medium transition duration-300">Join Us!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-teal-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact So Far</h2>
+                <p class="text-lg text-teal-100 max-w-2xl mx-auto">
+                    Numbers that tell a story of change and hope.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div>
+                    <span class="impact-number text-5xl font-bold" data-target="1200">0</span><span class="text-5xl font-bold">+</span>
+                    <p class="text-teal-200 mt-2 text-lg">Children Educated</p>
+                </div>
+                <div>
+                    <span class="impact-number text-5xl font-bold" data-target="50">0</span><span class="text-5xl font-bold">+</span>
+                    <p class="text-teal-200 mt-2 text-lg">Communities Reached</p>
+                </div>
+                <div>
+                    <span class="impact-number text-5xl font-bold" data-target="5000">0</span><span class="text-5xl font-bold">+</span>
+                    <p class="text-teal-200 mt-2 text-lg">Lives Improved</p>
+                </div>
+                <div>
+                    <span class="impact-number text-5xl font-bold" data-target="200">0</span><span class="text-5xl font-bold">+</span>
+                    <p class="text-teal-200 mt-2 text-lg">Volunteers Engaged</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="involved" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4 fade-in-element">Ways to Get Involved</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in-element" style="transition-delay: 0.2s;">
+                    You can make a difference. Join us in our efforts.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="w-full md:w-1/3 bg-gray-50 p-8 rounded-xl shadow-lg text-center transform hover:shadow-2xl transition-shadow duration-300 fade-in-element">
+                    <div class="text-5xl text-teal-500 mb-6">
+                        <i class="fas fa-hands-helping"></i> 
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Volunteer With Us</h3>
+                    <p class="text-gray-600 mb-6">
+                        Lend your time and skills to support our projects on the ground or remotely.
+                    </p>
+                    <a href="#" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-300">
+                        Become a Volunteer
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 bg-amber-50 p-8 rounded-xl shadow-lg text-center transform hover:shadow-2xl transition-shadow duration-300 fade-in-element" style="transition-delay: 0.2s;">
+                     <div class="text-5xl text-amber-500 mb-6">
+                        <i class="fas fa-donate"></i> 
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-3">Make a Donation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Your contribution can help us reach more people and expand our impact. Every bit counts.
+                    </p>
+                    <a href="#donate" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-300">
+                        Donate Securely
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-4 fade-in-element">Get Involved / Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in-element" style="transition-delay: 0.2s;">
+                    We'd love to hear from you. Reach out with any questions or how you can support our mission.
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-xl fade-in-element">
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition duration-300" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">NGO Name</h3>
+                    <p class="text-sm">Making a difference, one step at a time. Join our cause and help us build a brighter future for all.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-teal-400 transition duration-300">About Us</a></li>
+                        <li><a href="#events" class="hover:text-teal-400 transition duration-300">Events</a></li>
+                        <li><a href="#contact" class="hover:text-teal-400 transition duration-300">Get Involved</a></li> 
+                        <li><a href="#" class="hover:text-teal-400 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> NGO Name. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart text-red-500"></i> by Your Name/Organization</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth Scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const parentDropdown = this.closest('.dropdown-container');
+                const isMobileDropdownToggle = this.classList.contains('mobile-dropdown-toggle');
+                const isInDesktopDropdownMenu = this.closest('.dropdown-menu');
+                const isInMobileDropdownContent = this.closest('.mobile-dropdown-content');
+
+                if (this.getAttribute('href').startsWith('#') && !isMobileDropdownToggle && !isInDesktopDropdownMenu && !isInMobileDropdownContent) {
+                     e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                } else if ( (isInDesktopDropdownMenu || isInMobileDropdownContent) && this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                     if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden'); 
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Desktop Dropdown Logic
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        dropdownContainers.forEach(container => {
+            const button = container.querySelector('button'); 
+            const menu = container.querySelector('.dropdown-menu');
+            if (button && menu) {
+                button.addEventListener('mouseenter', () => {
+                    menu.classList.remove('hidden');
+                });
+                container.addEventListener('mouseleave', () => { 
+                    menu.classList.add('hidden');
+                });
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    const isHidden = menu.classList.contains('hidden');
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) m.classList.add('hidden');
+                    });
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                    } else {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+        document.addEventListener('click', (e) => {
+            dropdownContainers.forEach(container => {
+                const menu = container.querySelector('.dropdown-menu');
+                if (menu && !menu.classList.contains('hidden') && !container.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile Dropdown Toggle Logic
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                const content = toggle.nextElementSibling; 
+                const chevron = toggle.querySelector('.chevron-icon');
+                if (content) {
+                    content.classList.toggle('hidden');
+                    toggle.classList.toggle('open'); 
+                }
+            });
+        });
+
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+        const animatedElements = document.querySelectorAll('.fade-in-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => observer.observe(el));
+        
+        const heroH1 = document.querySelector('#home h1');
+        const heroP = document.querySelector('#home p');
+        if(heroH1) heroH1.classList.add('fade-in-element');
+        if(heroP) { 
+            heroP.classList.add('fade-in-element'); 
+            heroP.style.transitionDelay = '0.3s'; 
+        }
+        
+        setTimeout(() => {
+            const allAnimatedElements = document.querySelectorAll('.fade-in-element');
+            allAnimatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                     el.classList.add('is-visible');
+                }
+            });
+        }, 100);
+
+        const impactNumbers = document.querySelectorAll('.impact-number');
+        const impactAnimationSpeed = 20; 
+        const totalAnimationDuration = 1200; 
+
+        const animateCounter = (element) => {
+            const target = +element.getAttribute('data-target');
+            let currentCount = 0;
+            const steps = totalAnimationDuration / impactAnimationSpeed;
+            const increment = target / steps;
+            const updateCount = () => {
+                currentCount += increment;
+                if (currentCount < target) {
+                    element.innerText = Math.ceil(currentCount);
+                    setTimeout(updateCount, impactAnimationSpeed);
+                } else {
+                    element.innerText = target; 
+                }
+            };
+            updateCount();
+        };
+
+        const impactSection = document.querySelector('.bg-teal-600.text-white');
+        if (impactSection) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target === impactSection) {
+                        impactNumbers.forEach(counter => {
+                            if (!counter.classList.contains('is-animated')) {
+                                counter.innerText = '0'; 
+                                animateCounter(counter);
+                                counter.classList.add('is-animated');
+                            }
+                        });
+                       counterObserver.unobserve(impactSection); 
+                    }
+                });
+            }, { threshold: 0.5 }); 
+            counterObserver.observe(impactSection);
+        }
+
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            @keyframes bounceSlow { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
+            .animate-bounce-slow { animation: bounceSlow 2s infinite; animation-delay: 1s; }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>

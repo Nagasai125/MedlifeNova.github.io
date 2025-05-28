@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Learning Trip: Peru Spring 2020 - Our NGO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px); 
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        }
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .navbar-logo-img {
+            max-height: 40px; 
+            width: auto;
+        }
+        .dropdown-menu {
+            min-width: 200px; 
+        }
+        .dropdown-menu a {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .mobile-dropdown-toggle.open .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .trip-hero-bg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .trip-hero-bg::before { 
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5); 
+            z-index: 1;
+        }
+        .trip-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .trip-gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem; 
+        }
+        .trip-gallery-item img {
+            transition: transform 0.3s ease;
+        }
+        .trip-gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .testimonial-card {
+            background-color: #f9fafb; 
+            border-left: 4px solid #fbbf24; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800"> 
+
+    <header class="sticky top-0 z-50 shadow-lg">
+        <div class="h-0.5 bg-amber-400"></div> 
+        <div class="bg-slate-800 text-white">
+            <div class="container mx-auto px-4">
+                <nav class="flex items-center h-12"> 
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-start"> 
+                        <a href="index.html#home" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Home</a>
+                        <a href="index.html#about" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">About Us</a>
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap">
+                                Events <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="upcoming-events.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Upcoming Events</a> 
+                                <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Gallery</a> 
+                            </div>
+                        </div>
+                        <div class="relative dropdown-container">
+                             <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap">
+                                SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-56 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
+                                <a href="service-trip-peru-2020.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Peru Spring '2020</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:flex items-center justify-center flex-shrink-0 px-4"> 
+                        <a href="index.html" class="inline-block"> 
+                            <img src="https://placehold.co/120x40/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo" class="navbar-logo-img">
+                        </a>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-1 lg:space-x-3 flex-1 justify-end"> 
+                        <a href="index.html#pvsa" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">PVSA</a> 
+                        <div class="relative dropdown-container">
+                            <button class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 flex items-center focus:outline-none whitespace-nowrap"> 
+                                Stories <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
+                            </button>
+                            <div class="dropdown-menu absolute right-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden"> 
+                                <a href="index.html#blog" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Blog</a>
+                            </div>
+                        </div>
+                        <a href="index.html#contact" class="hover:text-teal-300 px-2 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap">Get Involved</a> 
+                        <a href="index.html#donate" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-1.5 px-3 rounded-md text-sm transition-colors duration-300 ml-2 whitespace-nowrap">DONATE</a> 
+                    </div>
+
+                    <div class="md:hidden flex w-full justify-between items-center">
+                        <a href="index.html" class="inline-block"> 
+                            <img src="https://placehold.co/100x36/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 36px;">
+                        </a>
+                        <button id="mobileMenuButton" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="h-0.5 bg-amber-400"></div> 
+
+        <div id="mobileMenu" class="md:hidden hidden bg-slate-800 text-white shadow-xl">
+            <div class="text-center py-3 border-b border-slate-700"> 
+                 <a href="index.html" class="inline-block"> 
+                     <img src="https://placehold.co/120x40/FFFFFF/000000?text=Logo&font=inter" alt="NGO Logo Mobile" class="navbar-logo-img" style="max-height: 40px;">
+                </a>
+            </div>
+            <div class="py-2 space-y-1"> 
+                <a href="index.html#home" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Home</a>
+                <a href="index.html#about" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">About Us</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Events <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="upcoming-events.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Upcoming Events</a>
+                        <a href="gallery.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Gallery</a>
+                    </div>
+                </div>
+                 <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="service-trip-peru-2020.html" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Peru Spring '2020</a>
+                    </div>
+                </div>
+                <a href="index.html#pvsa" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">PVSA</a>
+                <div>
+                    <button class="mobile-dropdown-toggle w-full flex justify-center items-center px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">
+                        Stories <i class="fas fa-chevron-down fa-xs ml-2 chevron-icon"></i>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-6 pr-3 py-1">
+                        <a href="index.html#blog" class="block py-2 text-sm text-center text-gray-300 hover:text-teal-300">Blog</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="block px-4 py-2.5 text-center hover:bg-slate-700 transition duration-300 font-medium rounded-md mx-3">Get Involved</a>
+                <a href="index.html#donate" class="block mx-4 my-3 bg-amber-500 hover:bg-amber-600 text-slate-900 text-center font-bold py-2.5 px-4 rounded-md shadow-md transition-colors duration-300">
+                    DONATE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="trip-hero-bg text-white py-20 md:py-32" style="background-image: url('https://placehold.co/1920x600/065f46/e0f2f1?text=Peru+Landscape');">
+            <div class="trip-hero-content container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-element">Service Learning Trip: Peru Spring 2020</h1>
+                <p class="text-xl md:text-2xl text-gray-200 fade-in-element" style="transition-delay: 0.2s;">An unforgettable journey of service, learning, and cultural immersion.</p>
+            </div>
+        </section>
+
+        <section id="trip-details" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="mb-12 md:mb-16 fade-in-element">
+                    <h2 class="text-3xl font-semibold text-teal-700 mb-6 text-center">Trip Overview</h2>
+                    <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed space-y-4">
+                        <p>
+                            Our Spring 2020 Service Learning Trip to Peru offered participants a unique opportunity to engage directly with local communities in the Sacred Valley region. Volunteers worked alongside community members on vital projects focusing on education and health infrastructure improvements.
+                        </p>
+                        <p>
+                            Beyond the service work, the trip was designed as a deep cultural exchange, allowing participants to learn about Peruvian history, traditions, and daily life. It was a transformative experience for everyone involved, fostering global citizenship and a commitment to service.
+                        </p>
+                    </div>
+                </div>
+
+                 <div class="grid md:grid-cols-3 gap-8 mb-12 md:mb-16 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in-element" style="transition-delay: 0.1s;">
+                        <i class="fas fa-calendar-alt text-3xl text-amber-500 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Dates</h3>
+                        <p class="text-gray-600">March 15 - March 28, 2020</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in-element" style="transition-delay: 0.2s;">
+                        <i class="fas fa-map-marker-alt text-3xl text-amber-500 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Location</h3>
+                        <p class="text-gray-600">Sacred Valley Region, Peru</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md fade-in-element" style="transition-delay: 0.3s;">
+                        <i class="fas fa-hands-helping text-3xl text-amber-500 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Focus Areas</h3>
+                        <p class="text-gray-600">Education & Health Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="mb-12 md:mb-16 fade-in-element">
+                    <h2 class="text-3xl font-semibold text-teal-700 mb-8 text-center">Trip Highlights & Activities</h2>
+                    <ul class="list-none space-y-6 max-w-2xl mx-auto">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-500 text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-700">Collaborated on constructing a new classroom for a rural primary school.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-500 text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-700">Assisted in painting and refurbishing a local health clinic.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-500 text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-700">Participated in educational workshops with local students.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-500 text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-700">Experienced traditional Peruvian culture through homestays and local artisan visits.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-teal-500 text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-700">Explored historical sites, including guided tours of Incan ruins.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-12 md:mb-16 bg-teal-50 p-8 rounded-lg shadow-lg fade-in-element">
+                    <h2 class="text-3xl font-semibold text-teal-700 mb-6 text-center">Our Impact</h2>
+                    <div class="grid md:grid-cols-2 gap-6 text-center">
+                        <div>
+                            <p class="text-4xl font-bold text-amber-500">1 New Classroom</p>
+                            <p class="text-gray-600 mt-1">Built for K-6 students</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-amber-500">50+ Children</p>
+                            <p class="text-gray-600 mt-1">Directly benefited from improved facilities</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-amber-500">1 Health Clinic</p>
+                            <p class="text-gray-600 mt-1">Refurbished and supplied</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-amber-500">20 Volunteers</p>
+                            <p class="text-gray-600 mt-1">Contributed their time and skills</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 md:mb-16 fade-in-element">
+                    <h2 class="text-3xl font-semibold text-teal-700 mb-8 text-center">Participant Voices</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="testimonial-card p-6 rounded-lg shadow-md">
+                            <p class="text-gray-600 italic mb-4">"This trip was life-changing. Working alongside the community and seeing the direct impact of our efforts was incredibly rewarding. I learned so much about Peruvian culture and myself."</p>
+                            <p class="text-gray-800 font-semibold">- Jane D., Volunteer</p>
+                        </div>
+                        <div class="testimonial-card p-6 rounded-lg shadow-md">
+                            <p class="text-gray-600 italic mb-4">"An amazing experience from start to finish. The organization was fantastic, and the work felt truly meaningful. I can't wait to join another trip!"</p>
+                            <p class="text-gray-800 font-semibold">- John S., Volunteer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12 md:mb-16 fade-in-element">
+                    <h2 class="text-3xl font-semibold text-teal-700 mb-8 text-center">Trip Memories</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="trip-gallery-item shadow-md">
+                            <img src="https://placehold.co/400x300/059669/ecfdf5?text=Peru+Team+Work" alt="Team working in Peru" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="trip-gallery-item shadow-md">
+                            <img src="https://placehold.co/400x300/047857/d1fae5?text=Cultural+Exchange" alt="Cultural exchange moment" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="trip-gallery-item shadow-md">
+                            <img src="https://placehold.co/400x300/065f46/a7f3d0?text=Scenery+Peru" alt="Peruvian scenery" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="trip-gallery-item shadow-md">
+                            <img src="https://placehold.co/400x300/064e3b/6ee7b7?text=Finished+Project" alt="Completed project in Peru" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="gallery.html" class="text-teal-600 hover:text-teal-700 font-semibold transition duration-300 group">
+                            View Full Gallery <i class="fas fa-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center fade-in-element">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Interested in Future Service Learning Trips?</h2>
+                    <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+                        We organize impactful trips throughout the year. Sign up for our newsletter to stay updated on upcoming opportunities or contact us for more information.
+                    </p>
+                    <a href="index.html#contact" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
+                        Learn About Future Trips
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">NGO Name</h3>
+                    <p class="text-sm">Making a difference, one step at a time. Join our cause and help us build a brighter future for all.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#about" class="hover:text-teal-400 transition duration-300">About Us</a></li>
+                        <li><a href="upcoming-events.html" class="hover:text-teal-400 transition duration-300">Events</a></li>
+                        <li><a href="index.html#contact" class="hover:text-teal-400 transition duration-300">Get Involved</a></li> 
+                        <li><a href="#" class="hover:text-teal-400 transition duration-300">Privacy Policy</a></li> 
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> NGO Name. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart text-red-500"></i> by Your Name/Organization</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        });
+        
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        dropdownContainers.forEach(container => {
+            const button = container.querySelector('button'); 
+            const menu = container.querySelector('.dropdown-menu');
+            if (button && menu) {
+                button.addEventListener('mouseenter', () => {
+                    menu.classList.remove('hidden');
+                });
+                container.addEventListener('mouseleave', () => { 
+                    menu.classList.add('hidden');
+                });
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    const isHidden = menu.classList.contains('hidden');
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) m.classList.add('hidden');
+                    });
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                    } else {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+        document.addEventListener('click', (e) => {
+            dropdownContainers.forEach(container => {
+                const menu = container.querySelector('.dropdown-menu');
+                if (menu && !menu.classList.contains('hidden') && !container.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                const content = toggle.nextElementSibling; 
+                const chevron = toggle.querySelector('.chevron-icon');
+                if (content) {
+                    content.classList.toggle('hidden');
+                    toggle.classList.toggle('open'); 
+                }
+            });
+        });
+
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+        const animatedElements = document.querySelectorAll('.fade-in-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => observer.observe(el));
+        
+        setTimeout(() => {
+            const allAnimatedElements = document.querySelectorAll('.fade-in-element');
+            allAnimatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                     el.classList.add('is-visible');
+                }
+            });
+        }, 100);
+    </script>
+</body>
+</html>
