@@ -102,8 +102,8 @@
                                 Events <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
                             </button>
                             <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
-                                <a href="upcoming-events.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Upcoming Events</a> {/* Link to this page */}
-                                <a href="index.html#gallery" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Gallery</a> 
+                                <a href="upcoming-events.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Upcoming Events</a> 
+                                <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Gallery</a> 
                             </div>
                         </div>
                         <div class="relative dropdown-container">
@@ -111,7 +111,7 @@
                                 SERVICE LEARNING TRIPS <i class="fas fa-chevron-down fa-xs ml-1.5"></i>
                             </button>
                             <div class="dropdown-menu absolute left-0 mt-1 w-56 bg-slate-700 rounded-md shadow-lg py-1 z-20 hidden">
-                                <a href="index.html#peru-spring-2020" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Peru Spring '2020</a>
+                                <a href="service-learning-trips/peru-spring-2020.html" class="block px-4 py-2 text-sm text-gray-200 hover:bg-slate-600 hover:text-teal-300">Peru Spring '2020</a>
                             </div>
                         </div>
                     </div>
@@ -347,26 +347,18 @@
             const button = container.querySelector('button'); 
             const menu = container.querySelector('.dropdown-menu');
             if (button && menu) {
-                button.addEventListener('mouseenter', () => {
-                    menu.classList.remove('hidden');
-                });
-                container.addEventListener('mouseleave', () => { 
-                    menu.classList.add('hidden');
-                });
-                button.addEventListener('click', (e) => {
+                 button.addEventListener('click', (e) => { // Use click for better accessibility
                     e.stopPropagation(); 
                     const isHidden = menu.classList.contains('hidden');
+                     // Hide all other open menus
                     document.querySelectorAll('.dropdown-menu').forEach(m => {
                         if (m !== menu) m.classList.add('hidden');
                     });
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                    } else {
-                        menu.classList.add('hidden');
-                    }
+                    menu.classList.toggle('hidden');
                 });
             }
         });
+        // Hide dropdowns when clicking outside
         document.addEventListener('click', (e) => {
             dropdownContainers.forEach(container => {
                 const menu = container.querySelector('.dropdown-menu');

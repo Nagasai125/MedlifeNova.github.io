@@ -324,26 +324,18 @@
             const button = container.querySelector('button'); 
             const menu = container.querySelector('.dropdown-menu');
             if (button && menu) {
-                button.addEventListener('mouseenter', () => {
-                    menu.classList.remove('hidden');
-                });
-                container.addEventListener('mouseleave', () => { 
-                    menu.classList.add('hidden');
-                });
-                button.addEventListener('click', (e) => {
+                 button.addEventListener('click', (e) => { // Use click for better accessibility
                     e.stopPropagation(); 
                     const isHidden = menu.classList.contains('hidden');
+                     // Hide all other open menus
                     document.querySelectorAll('.dropdown-menu').forEach(m => {
                         if (m !== menu) m.classList.add('hidden');
                     });
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                    } else {
-                        menu.classList.add('hidden');
-                    }
+                    menu.classList.toggle('hidden');
                 });
             }
         });
+        // Hide dropdowns when clicking outside
         document.addEventListener('click', (e) => {
             dropdownContainers.forEach(container => {
                 const menu = container.querySelector('.dropdown-menu');
