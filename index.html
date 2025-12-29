@@ -13,23 +13,146 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        /* Advanced Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceSlow {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* Animation Classes */
         .fade-in-element {
             opacity: 0;
-            transform: translateY(30px); 
-            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
         .fade-in-element.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.8s ease-out forwards;
+        }
+
+        .animate-bounce-slow {
+            animation: bounceSlow 2s infinite;
+            animation-delay: 1s;
+        }
+
+        /* Hero Section */
         .hero-bg {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            position: relative; 
+            position: relative;
+            overflow: hidden;
         }
-        .hero-bg::before { 
+
+        .hero-bg::before {
             content: '';
             position: absolute;
             top: 0;
@@ -38,49 +161,224 @@
             bottom: 0;
             background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
             z-index: 1;
+            transition: background 0.3s ease;
         }
+
         .hero-content {
             position: relative;
             z-index: 2;
         }
-        .about-card {
-            background-color: #f9fafb; 
-            border-left: 4px solid #14b8a6; 
-            padding: 1.5rem; 
-            border-radius: 0.5rem; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+
+        .hero-content h1 {
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
+
+        .hero-content p {
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-content a {
+            animation: fadeInUp 1s ease-out 0.8s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .hero-content a:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Card Animations */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(20, 184, 166, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card-hover:hover::after {
+            opacity: 1;
+        }
+
+        /* Button Effects */
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .btn-hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-shimmer {
+            background: linear-gradient(90deg, #14b8a6 0%, #0d9488 25%, #14b8a6 50%, #0d9488 75%, #14b8a6 100%);
+            background-size: 200% auto;
+        }
+
+        .btn-shimmer:hover {
+            background-position: right center;
+            transition: background-position 0.5s ease;
+        }
+
+        /* About Card */
+        .about-card {
+            background-color: #f9fafb;
+            border-left: 4px solid #14b8a6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
         .about-card h3 {
             display: flex;
             align-items: center;
-            font-size: 1.5rem; 
-            font-weight: 600; 
-            color: #0f766e; 
-            margin-bottom: 0.75rem; 
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0f766e;
+            margin-bottom: 0.75rem;
         }
+
         .about-card h3 i {
-            margin-right: 0.75rem; 
-            color: #14b8a6; 
+            margin-right: 0.75rem;
+            color: #14b8a6;
         }
+
+        /* Image Hover Effects */
+        .image-zoom {
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .image-zoom img {
+            transition: transform 0.5s ease;
+        }
+
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Icon Animations */
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .icon-pulse:hover {
+            animation: pulse 1s ease-in-out;
+        }
+
+        /* Navigation */
         .navbar-logo-img {
-            max-height: 70px; 
+            max-height: 70px;
             width: auto;
+            transition: transform 0.3s ease;
         }
+
+        .navbar-logo-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
         .dropdown-menu {
-            min-width: 200px; 
+            min-width: 200px;
+            animation: slideDown 0.3s ease-out;
         }
+
         .dropdown-menu a {
-            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
         }
+
+        .dropdown-menu a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #14b8a6;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-menu a:hover::before {
+            transform: scaleY(1);
+        }
+
         .mobile-dropdown-toggle.open .chevron-icon {
             transform: rotate(180deg);
         }
+
         .chevron-icon {
             transition: transform 0.3s ease-in-out;
         }
+
+        /* Form Elements */
+        input:focus, textarea:focus {
+            transform: scale(1.01);
+            transition: transform 0.2s ease;
+        }
+
+        /* Stagger Delays for Children */
+        .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Loading/Skeleton Effect */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #14b8a6, #f59e0b);
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800"> 
+<body class="bg-gray-100 text-gray-800">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div> 
 
     <header class="sticky top-0 z-50 shadow-lg">
         <div class="h-0.5 bg-amber-400"></div> 
@@ -214,7 +512,7 @@
             </div>
 
             <div class="flex flex-wrap lg:flex-nowrap items-center gap-12 lg:gap-16">
-                <div class="w-full lg:w-1/2">
+                <div class="w-full lg:w-1/2 image-zoom">
                     <img src="coveraboutus.png" alt="Our Team at Work" class="rounded-xl shadow-2xl w-full h-auto object-cover fade-in-element">
                 </div>
                 <div class="w-full lg:w-1/2 space-y-6 fade-in-element" style="transition-delay: 0.2s;">
@@ -245,18 +543,69 @@
                     Join us at our upcoming events and be part of the change.
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in-element">
-                    <img src="event.png" alt="Annual Gala" class="w-full h-56 object-cover">
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Event Card -->
+                <div class="w-full md:w-auto md:max-w-md bg-gradient-to-br from-red-50 to-white rounded-xl shadow-lg overflow-hidden card-hover fade-in-element relative border-2 border-red-100">
+                    <div class="bg-gradient-to-r from-red-600 to-red-700 p-6 text-white">
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fas fa-heartbeat text-4xl opacity-90"></i>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-hand-holding-heart text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">MEDLIFE Blood Drive</h3>
+                        <p class="text-red-100 text-sm">Partnered with American Red Cross</p>
+                    </div>
+
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-700 mb-1">Dancing for a cause</h3>
-                        <p class="text-sm text-amber-600 font-semibold mb-2"><i class="far fa-calendar-alt mr-1"></i> June 7th, 2025</p>
-                        <p class="text-gray-600 text-sm mb-4">
-                            fundraising event of the year. An evening of inspiration and community.
-                        </p>
-                        <a href="https://drive.google.com/file/d/1Kq1Kh7m12_NrbyXmcetUbo2liWPAMRxz/view?usp=sharing" target="_blank" class="text-teal-500 hover:text-teal-600 font-medium transition duration-300">Learn More & Tickets</a>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-calendar-alt text-red-600 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Tuesday, December 30th, 2025</p>
+                                    <p class="text-sm text-gray-600">9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt text-red-600 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Curie Learning Ashburn Center</p>
+                                    <p class="text-sm text-gray-600">20604 Gordon Park Square</p>
+                                    <p class="text-sm text-gray-600">Suite #150, Ashburn 21047</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r">
+                                <p class="text-sm text-gray-700 font-medium mb-2">
+                                    <i class="fas fa-gift text-red-600 mr-2"></i>
+                                    Donate Dec 19-Jan 4 & get an exclusive Red Cross T-shirt!
+                                </p>
+                            </div>
+
+                            <div class="pt-2">
+                                <!-- <p class="text-xs text-gray-500 mb-3">Scan QR code or use code: <span class="font-semibold text-red-600">medlifenova</span></p> -->
+                                <a href="https://www.redcrossblood.org/give.html/drive-results?zipSponsor=medlifenova" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-md btn-hover-lift text-center transition-all duration-300">
+                                    <i class="fas fa-calendar-check mr-2"></i>Schedule Appointment
+                                </a>
+                                <p class="text-xs text-center text-gray-500 mt-2">
+                                    Call 1-800-RED-CROSS (1-800-733-2767)
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Original Flyer -->
+                <div class="w-full md:w-auto md:max-w-md bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in-element relative" style="transition-delay: 0.2s;">
+                    <a href="https://www.redcrossblood.org/give.html/drive-results?zipSponsor=medlifenova" target="_blank" class="block">
+                        <img src="blooddrivemedlife.png" alt="Medlife Blood Drive Flyer" class="w-full h-auto object-contain">
+                    </a>
+                    <div class="p-4 bg-gray-50 text-center">
+                        <p class="text-sm text-gray-600">Click flyer to schedule appointment</p>
+                    </div>
+                </div>
+            </div>
                 <!-- <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 fade-in-element" style="transition-delay: 0.2s;">
                     <img src="https://placehold.co/600x400/fecaca/991b1b?text=Community+Workshop" alt="Community Workshop" class="w-full h-56 object-cover">
                     <div class="p-6">
@@ -321,28 +670,28 @@
                 </p>
             </div>
             <div class="flex flex-wrap justify-center gap-8">
-                <div class="w-full md:w-1/3 bg-gray-50 p-8 rounded-xl shadow-lg text-center transform hover:shadow-2xl transition-shadow duration-300 fade-in-element">
-                    <div class="text-5xl text-teal-500 mb-6">
-                        <i class="fas fa-hands-helping"></i> 
+                <div class="w-full md:w-1/3 bg-gray-50 p-8 rounded-xl shadow-lg text-center card-hover fade-in-element relative">
+                    <div class="text-5xl text-teal-500 mb-6 icon-float">
+                        <i class="fas fa-hands-helping icon-pulse"></i>
                     </div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-3">Volunteer With Us</h3>
                     <p class="text-gray-600 mb-6">
                         Lend your time and skills to support our projects on the ground or remotely.
                     </p>
-                    <a href="#getinvolved" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-300">
+                    <a href="#getinvolved" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-6 rounded-lg shadow btn-hover-lift inline-block">
                         Become a Volunteer
                     </a>
                 </div>
-                <div class="w-full md:w-1/3 bg-amber-50 p-8 rounded-xl shadow-lg text-center transform hover:shadow-2xl transition-shadow duration-300 fade-in-element" style="transition-delay: 0.2s;">
-                     <div class="text-5xl text-amber-500 mb-6">
-                        <i class="fas fa-donate"></i> 
+                <div class="w-full md:w-1/3 bg-amber-50 p-8 rounded-xl shadow-lg text-center card-hover fade-in-element relative" style="transition-delay: 0.2s;">
+                     <div class="text-5xl text-amber-500 mb-6 icon-float" style="animation-delay: 0.5s;">
+                        <i class="fas fa-donate icon-pulse"></i>
                     </div>
                     <h3 class="text-2xl font-semibold text-gray-700 mb-3">Make a Donation</h3>
                     <p class="text-gray-600 mb-6">
                         Your contribution can help us reach more people and expand our impact. Every bit counts.
                     </p>
                     <a href="https://secure.givelively.org/donate/medlife/moving-mountains-2024-25-it-starts-with-you/medlife-nova
-                    " class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-300">
+                    " class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-6 rounded-lg shadow btn-hover-lift inline-block">
                         Donate Securely
                     </a>
                 </div>
@@ -373,8 +722,8 @@
                         <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition duration-300" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
-                            Send Message
+                        <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md btn-hover-lift relative overflow-hidden">
+                            <span class="relative z-10">Send Message</span>
                         </button>
                     </div>
                 </form>
@@ -416,6 +765,25 @@
     </footer>
 
     <script>
+        // Scroll Progress Bar
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + '%';
+            }
+        });
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero-bg');
+            if (hero) {
+                const scrolled = window.scrollY;
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -506,15 +874,27 @@
             currentYearElement.textContent = new Date().getFullYear();
         }
         
+        // Enhanced Intersection Observer for Scroll Animations
         const animatedElements = document.querySelectorAll('.fade-in-element');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
+                    // Add stagger effect to children if they exist
+                    const children = entry.target.querySelectorAll('p, h3, a, img');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.style.opacity = '1';
+                            child.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
         animatedElements.forEach(el => observer.observe(el));
         
         const heroH1 = document.querySelector('#home h1');
@@ -575,13 +955,84 @@
             counterObserver.observe(impactSection);
         }
 
-        const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = `
-            @keyframes bounceSlow { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
-            .animate-bounce-slow { animation: bounceSlow 2s infinite; animation-delay: 1s; }
+        // Add ripple effect to buttons
+        const buttons = document.querySelectorAll('a[href], button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add dynamic style for ripple animation
+        const rippleStyle = document.createElement("style");
+        rippleStyle.type = "text/css";
+        rippleStyle.innerText = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
         `;
-        document.head.appendChild(styleSheet);
+        document.head.appendChild(rippleStyle);
+
+        // Mouse parallax effect for cards
+        const cards = document.querySelectorAll('.card-hover');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Smooth scroll reveal for sections
+        const sections = document.querySelectorAll('section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.05 });
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            sectionObserver.observe(section);
+        });
     </script>
 </body>
 </html>
