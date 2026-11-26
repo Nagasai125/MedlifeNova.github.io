@@ -20,10 +20,13 @@ Deploy the generated site, not the Liquid source files. For a Git-connected Page
 | Setting | Value |
 | --- | --- |
 | Root directory | Repository root |
-| Build command | `bundle exec jekyll build` |
+| Build command | `bundle exec jekyll build --baseurl ''` |
 | Build output directory | `_site` |
 | Environment | `JEKYLL_ENV=production` |
+| GitHub repository | `PAGES_REPO_NWO=Nagasai125/MedlifeNova.github.io` |
 | Ruby version | `RUBY_VERSION=3.3.4` (matches the validated local Docker build) |
+
+Keep `theme: null` in `_config.yml`: this site supplies its own layouts and CSS. Otherwise `github-pages` injects the unused Primer theme, whose Sass compilation fails under Cloudflare's ASCII build locale. Apply the build variables to both production and preview environments; email credentials belong only in production.
 
 Commit the source pages, `_data`, `_includes`, `_layouts`, `assets`, `_config.yml`, and `Gemfile` before a Git-connected deployment. Select the branch containing those changes as the production branch. A direct upload instead needs the contents of a completed production build; uploading this repository without building leaves Liquid templates unrendered.
 
@@ -65,4 +68,16 @@ permalink: /your-page.html
 ---
 ```
 
-The homepage contact form posts to FormSubmit. Verify its action and fields in preview without sending a test submission to the live inbox.
+## Cloudflare contact email
+
+The Cloudflare integration is staged, not activated. Until `_data/contact.yml` is enabled with a real Turnstile site key, the form continues posting to FormSubmit. The Pages Function at `functions/api/contact.js` only accepts verified contact submissions from the production domains and always sends to `medlifenorthernva@gmail.com`. The sender is `contact@medlifenova.org`; Reply-To is the visitor's validated address. It does not create a mailbox or send automatic replies to visitors.
+
+Activation steps:
+
+1. Activate the domain on Cloudflare DNS. Onboard `medlifenova.org` under Email Service → Email Sending and verify its authentication records. Add and verify `medlifenorthernva@gmail.com` under Destination Addresses.
+2. Create a managed Turnstile widget allowing `medlifenova.org`, `www.medlifenova.org`, and `medlifenova.pages.dev`. Store its secret as `TURNSTILE_SECRET_KEY` in the Pages project's production secrets.
+3. Create an API token scoped to this account's **Email Sending: Edit** permission. Store it only as the Pages production secret `CLOUDFLARE_EMAIL_API_TOKEN`. Add production variables `CLOUDFLARE_ACCOUNT_ID=9d3bf5e7b39c263b13b5885b18b3cac7` and `CONTACT_EMAIL_ENABLED=true`. Do not put credentials in Git, Jekyll data, or browser code. Leave preview environments without sending credentials.
+4. Set the public widget key and `cloudflare_enabled: true` in `_data/contact.yml`, then deploy through the GitHub PR workflow. Pages compiles `functions/` separately; Jekyll excludes server code and tests from public static files.
+5. Verify one explicitly authorized contact submission reaches the Gmail inbox before calling setup complete. Check Cloudflare Email Sending activity for delivery; an API acceptance or queued result alone does not confirm inbox delivery.
+
+Run `node --test tests/contact.test.mjs` for validation, spam checks, recipient restrictions, and provider failure cases. These tests mock external APIs and send no email. Cloudflare's [Email Sending guide](https://developers.cloudflare.com/email-service/get-started/send-emails/) and [Turnstile validation guide](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/) describe the required account setup.

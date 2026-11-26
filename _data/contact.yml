@@ -1,0 +1,4 @@
+# Enable only after Cloudflare DNS, Email Sending, recipient verification,
+# and the Pages runtime secrets have been configured and tested.
+cloudflare_enabled: false
+turnstile_site_key: "0x4AAAAAAGUy9HL1koweL9j9"

@@ -1,3 +1,5 @@
 title: Medlife NoVA
 url: https://medlifenova.org
-exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+# The site supplies its own layouts and CSS; do not compile the default Primer theme.
+theme: null
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, functions, tests]
