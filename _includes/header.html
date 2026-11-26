@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Medlife NoVA home"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Medlife NoVA" width="120" height="60"></a>
+    <button type="button" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Main navigation" class="hidden">
+      <div class="nav-group nav-group-left">
+        <a href="{{ '/' | relative_url }}#home"{% if page.home %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/' | relative_url }}#about">About Us</a>
+        <details><summary>Events</summary><div><a href="{% unless page.home %}{{ '/' | relative_url }}{% endunless %}#events">Upcoming Events</a><a href="{{ '/past-events.html' | relative_url }}">Past Events</a><a href="{{ '/gallery.html' | relative_url }}">Gallery</a></div></details>
+        <details><summary>Service Learning Trips</summary><div><a href="{{ '/service-learning-trips/peru-spring-2020.html' | relative_url }}">Peru Spring 2020</a><a href="https://www.medlifemovement.org/service-learning-trips/">More Info on SLT</a></div></details>
+      </div>
+      <div class="nav-group nav-group-right">
+        <a href="{{ '/pvsa.html' | relative_url }}">PVSA</a>
+        <details><summary>Stories</summary><div><a href="{{ '/blog.html' | relative_url }}">Blog</a></div></details>
+        <a href="{{ '/' | relative_url }}#contact">Get Involved</a>
+        <a class="nav-donate" href="https://secure.givelively.org/donate/medlife/moving-mountains-2024-25-it-starts-with-you/medlife-nova">Donate</a>
+      </div>
+    </nav>
+  </div>
+</header>

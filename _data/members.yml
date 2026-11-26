@@ -1,0 +1,48 @@
+# Suggested roles and draft bios for review. Stock portraits and the labeled group photo are temporary.
+# Replace photo with a verified portrait and remove photo_placeholder/photo_caption when ready.
+- name: Aashrita Pondugula
+  photo: /assets/images/team/sample-1.jpg
+  photo_placeholder: true
+  photo_source: https://unsplash.com/photos/5V6takmtNUM
+  role: Vice President
+  bio: >-
+    Aashrita helps coordinate chapter activities and supports volunteers from planning
+    through event day. The focus is on building a welcoming team where everyone can
+    contribute to meaningful community service.
+- name: Aniketh Pondugula
+  photo: /assets/images/coveraboutus.png
+  photo_caption: MEDLIFE team photo
+  photo_alt: MEDLIFE NoVA team group at an event
+  photo_source: https://medlifenova.org/
+  role: President
+  bio: >-
+    Aniketh guides the chapter's community service efforts and brings the team together
+    around shared goals. The role connects volunteers, local partners, and service
+    opportunities to help turn ideas into action.
+- name: Amogh Sarasam
+  photo: /assets/images/team/sample-3.jpg
+  photo_placeholder: true
+  photo_source: https://unsplash.com/photos/orpe_PL-lFM
+  role: Communications Lead
+  bio: >-
+    Amogh helps share the chapter's story through event updates, volunteer announcements,
+    and community outreach. The focus is on keeping members informed and making it easy
+    for new volunteers to get involved.
+- name: Attar Maddi Setti Anantanamala
+  photo: /assets/images/team/sample-4.jpg
+  photo_placeholder: true
+  photo_source: https://unsplash.com/photos/7YVZYZeITc8
+  role: Events Coordinator
+  bio: >-
+    Attar helps organize service events, coordinate schedules, and support volunteers
+    on the day. The role brings people and practical details together so each activity
+    runs smoothly and gives members a rewarding way to contribute.
+- name: Avani Rajkumar
+  photo: /assets/images/team/sample-5.jpg
+  photo_placeholder: true
+  photo_source: https://unsplash.com/photos/4RxZe_7zA4o
+  role: Community Outreach Lead
+  bio: >-
+    Avani helps build connections with local organizations and welcomes new members
+    into the chapter. The focus is on listening to community needs and connecting
+    volunteers with opportunities to make a positive difference.

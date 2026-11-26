@@ -1,0 +1,279 @@
+# Local gallery images imported from the linked Drive folders. New Drive uploads require a new import.
+- id: blood-drive
+  cover: /assets/images/gallery/blood-drive/cover.jpg
+  title: "Blood Drive"
+  month: December
+  source: https://drive.google.com/drive/folders/1-dVa9_SU2GAQ0k4NPgBPYXZmFAYsX_Sb
+  photos:
+    - src: /assets/images/gallery/blood-drive/01.jpg
+      thumbnail: /assets/images/gallery/blood-drive/01-thumb.jpg
+      alt: "Blood Drive — photo 1"
+      width: 1600
+      height: 1200
+      drive_id: 1hQzzzVdMHn_-7drFNfvFid7Lq7T9L7oM
+    - src: /assets/images/gallery/blood-drive/02.jpg
+      thumbnail: /assets/images/gallery/blood-drive/02-thumb.jpg
+      alt: "Blood Drive — photo 2"
+      width: 1600
+      height: 1200
+      drive_id: 1lpjDmKpKIUFNG-G8ZdxLSWcoFur88VJC
+    - src: /assets/images/gallery/blood-drive/03.jpg
+      thumbnail: /assets/images/gallery/blood-drive/03-thumb.jpg
+      alt: "Blood Drive — photo 3"
+      width: 1600
+      height: 1200
+      drive_id: 13XnuxUmYnisEdTlFip84c2_xI2eXrRc2
+    - src: /assets/images/gallery/blood-drive/04.jpg
+      thumbnail: /assets/images/gallery/blood-drive/04-thumb.jpg
+      alt: "Blood Drive — photo 4"
+      width: 1600
+      height: 900
+      drive_id: 1Q7QRVvwEoqZGH_aHPrhUyPTP8xud4pJs
+    - src: /assets/images/gallery/blood-drive/05.jpg
+      thumbnail: /assets/images/gallery/blood-drive/05-thumb.jpg
+      alt: "Blood Drive — photo 5"
+      width: 1600
+      height: 900
+      drive_id: 14NDKw3Z5eYy8glQdc_Oizl2fyGMca8AQ
+    - src: /assets/images/gallery/blood-drive/06.jpg
+      thumbnail: /assets/images/gallery/blood-drive/06-thumb.jpg
+      alt: "Blood Drive — photo 6"
+      width: 1600
+      height: 1200
+      drive_id: 12G4oBmItJkyes7dTxjltdX3-Bsmpxbf1
+- id: book-drive
+  cover: /assets/images/gallery/book-drive/cover.jpg
+  title: "Book Drive"
+  month: September
+  source: https://drive.google.com/drive/folders/1--XBqTsOaHkPmfOw5Kvz5DBdf4D8WXaG
+  photos:
+    - src: /assets/images/gallery/book-drive/01.jpg
+      thumbnail: /assets/images/gallery/book-drive/01-thumb.jpg
+      alt: "Book Drive — photo 1"
+      width: 1200
+      height: 1600
+      drive_id: 13JI0hnGqE3__0n9jPUmkU4SFBUehPvkU
+    - src: /assets/images/gallery/book-drive/02.jpg
+      thumbnail: /assets/images/gallery/book-drive/02-thumb.jpg
+      alt: "Book Drive — photo 2"
+      width: 1200
+      height: 1600
+      drive_id: 1DHUrmfABXIbXbaq1T4o9bppKHDQPAmlc
+    - src: /assets/images/gallery/book-drive/03.jpg
+      thumbnail: /assets/images/gallery/book-drive/03-thumb.jpg
+      alt: "Book Drive — photo 3"
+      width: 1200
+      height: 1600
+      drive_id: 1o-lyzqpvKE7s5t2aQ0GtyCwzd0Qei4fR
+    - src: /assets/images/gallery/book-drive/04.jpg
+      thumbnail: /assets/images/gallery/book-drive/04-thumb.jpg
+      alt: "Book Drive — photo 4"
+      width: 1200
+      height: 1600
+      drive_id: 1rLUErBtnTwUt4Ek7cS86VPtMa9Pm4lr2
+    - src: /assets/images/gallery/book-drive/05.jpg
+      thumbnail: /assets/images/gallery/book-drive/05-thumb.jpg
+      alt: "Book Drive — photo 5"
+      width: 1561
+      height: 1600
+      drive_id: 1Yt6ZdRsOmoTzJEORQTONZUcqsmq5SfCL
+    - src: /assets/images/gallery/book-drive/06.jpg
+      thumbnail: /assets/images/gallery/book-drive/06-thumb.jpg
+      alt: "Book Drive — photo 6"
+      width: 739
+      height: 1600
+      drive_id: 13Ry-ZUndtKWE5yzZy2M823MV6l5LLEU0
+- id: coat-drive
+  title: "Coat Drive"
+  month: October
+  photos: []
+- id: dance-event
+  cover: /assets/images/gallery/dance-event/cover.jpg
+  title: "Dance Event"
+  month: November
+  source: https://drive.google.com/drive/folders/1-E4Pljzvlasx4qgOEESvnadIwoS3M146
+  photos:
+    - src: /assets/images/gallery/dance-event/01.jpg
+      thumbnail: /assets/images/gallery/dance-event/01-thumb.jpg
+      alt: "Dance Event — photo 1"
+      width: 739
+      height: 1600
+      drive_id: 16MRwb_lX-jJVMT46QYfxosteKBzDv4aY
+    - src: /assets/images/gallery/dance-event/02.jpg
+      thumbnail: /assets/images/gallery/dance-event/02-thumb.jpg
+      alt: "Dance Event — photo 2"
+      width: 739
+      height: 1600
+      drive_id: 1Ds7dH_xwsz-CenBziAAXhjgIiDb5gWue
+    - src: /assets/images/gallery/dance-event/03.jpg
+      thumbnail: /assets/images/gallery/dance-event/03-thumb.jpg
+      alt: "Dance Event — photo 3"
+      width: 739
+      height: 1600
+      drive_id: 1CWT6TfiiI59WTPFCZveSeO_UOakcL71A
+    - src: /assets/images/gallery/dance-event/04.jpg
+      thumbnail: /assets/images/gallery/dance-event/04-thumb.jpg
+      alt: "Dance Event — photo 4"
+      width: 739
+      height: 1600
+      drive_id: 1IKFreOY8dwc1nx_hMpGSE3vzI9u0TpTe
+    - src: /assets/images/gallery/dance-event/05.jpg
+      thumbnail: /assets/images/gallery/dance-event/05-thumb.jpg
+      alt: "Dance Event — photo 5"
+      width: 739
+      height: 1600
+      drive_id: 1PcF3Aqa0RstSbCkJfH14Tvtrn6IaRQPf
+    - src: /assets/images/gallery/dance-event/06.jpg
+      thumbnail: /assets/images/gallery/dance-event/06-thumb.jpg
+      alt: "Dance Event — photo 6"
+      width: 739
+      height: 1600
+      drive_id: 1TMa8f5x5zsYplTs7lsVkjIotrA9qLE0r
+    - src: /assets/images/gallery/dance-event/07.jpg
+      thumbnail: /assets/images/gallery/dance-event/07-thumb.jpg
+      alt: "Dance Event — photo 7"
+      width: 739
+      height: 1600
+      drive_id: 1Gl-PjBARx0vg2UMxkrktcWkBGbjpg4vq
+    - src: /assets/images/gallery/dance-event/08.jpg
+      thumbnail: /assets/images/gallery/dance-event/08-thumb.jpg
+      alt: "Dance Event — photo 8"
+      width: 1600
+      height: 1200
+      drive_id: 1U0swW7QmhmtuPJTGATgPQ4DL7ZI-uG9O
+    - src: /assets/images/gallery/dance-event/09.jpg
+      thumbnail: /assets/images/gallery/dance-event/09-thumb.jpg
+      alt: "Dance Event — photo 9"
+      width: 1600
+      height: 1200
+      drive_id: 14g7DXkV7eZvYfL4yl9un_u2DNTlM5dQv
+    - src: /assets/images/gallery/dance-event/10.jpg
+      thumbnail: /assets/images/gallery/dance-event/10-thumb.jpg
+      alt: "Dance Event — photo 10"
+      width: 739
+      height: 1600
+      drive_id: 19DzEBrcY3t_kIibluAUS_iigVZhctvDp
+- id: dc-kitchen-soup
+  cover: /assets/images/gallery/dc-kitchen-soup/cover.jpg
+  title: "DC Kitchen Soup"
+  month: May
+  source: https://drive.google.com/drive/folders/1--Emyj2F7URhdJ7zZVrkWM2Uh-4YrrpE
+  photos:
+    - src: /assets/images/gallery/dc-kitchen-soup/01.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/01-thumb.jpg
+      alt: "DC Kitchen Soup — photo 1"
+      width: 1600
+      height: 1200
+      drive_id: 1bFmxQtsB-LQBDLI9JvViGB0N2RwM4XLu
+    - src: /assets/images/gallery/dc-kitchen-soup/02.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/02-thumb.jpg
+      alt: "DC Kitchen Soup — photo 2"
+      width: 1600
+      height: 1200
+      drive_id: 1I5f7vfpR8yTObSMRKcnUILq-Lg3MtyOk
+    - src: /assets/images/gallery/dc-kitchen-soup/03.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/03-thumb.jpg
+      alt: "DC Kitchen Soup — photo 3"
+      width: 1200
+      height: 1600
+      drive_id: 1tgEmWTyfGJ1G1CN5RrbIBmkB-pw6yTsH
+    - src: /assets/images/gallery/dc-kitchen-soup/04.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/04-thumb.jpg
+      alt: "DC Kitchen Soup — photo 4"
+      width: 1200
+      height: 1600
+      drive_id: 1tXuYXtUBawordkKhSpotLxByAZaNs-jk
+    - src: /assets/images/gallery/dc-kitchen-soup/05.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/05-thumb.jpg
+      alt: "DC Kitchen Soup — photo 5"
+      width: 1200
+      height: 1600
+      drive_id: 1AI5PYGBGbA0zui89P3MKh6FIXqioh4wx
+    - src: /assets/images/gallery/dc-kitchen-soup/06.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/06-thumb.jpg
+      alt: "DC Kitchen Soup — photo 6"
+      width: 1600
+      height: 1200
+      drive_id: 15Ht7-HwXHFwVDJIOFS0GACV_s1ZXoyBe
+    - src: /assets/images/gallery/dc-kitchen-soup/07.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/07-thumb.jpg
+      alt: "DC Kitchen Soup — photo 7"
+      width: 1200
+      height: 1600
+      drive_id: 1Ff8HGe7U3guUpIrgLc-VrJQp32Wn0-3_
+    - src: /assets/images/gallery/dc-kitchen-soup/08.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/08-thumb.jpg
+      alt: "DC Kitchen Soup — photo 8"
+      width: 1200
+      height: 1600
+      drive_id: 19i7JzaOa58wRg1VENvQIhhbwiyjR68um
+    - src: /assets/images/gallery/dc-kitchen-soup/09.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/09-thumb.jpg
+      alt: "DC Kitchen Soup — photo 9"
+      width: 1600
+      height: 1200
+      drive_id: 1E7PGoFR7xg8cUrZTx9Y7_YCuRORCXmB7
+    - src: /assets/images/gallery/dc-kitchen-soup/10.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/10-thumb.jpg
+      alt: "DC Kitchen Soup — photo 10"
+      width: 1600
+      height: 1200
+      drive_id: 1cOeOPLbglSlFQweh5sFsTXqM-tfG_RKa
+    - src: /assets/images/gallery/dc-kitchen-soup/11.jpg
+      thumbnail: /assets/images/gallery/dc-kitchen-soup/11-thumb.jpg
+      alt: "DC Kitchen Soup — photo 11"
+      width: 1600
+      height: 1200
+      drive_id: 1DGuvkXU4XDHSrZCc-o2547tdff4MOS5m
+- id: jk-farming
+  cover: /assets/images/gallery/jk-farming/cover.jpg
+  title: "JK Farming"
+  month: April
+  source: https://drive.google.com/drive/folders/1-aJwcRHkzNWm8imfbPgXFMzYNI5l9GAb
+  photos:
+    - src: /assets/images/gallery/jk-farming/01.jpg
+      thumbnail: /assets/images/gallery/jk-farming/01-thumb.jpg
+      alt: "JK Farming — photo 1"
+      width: 1200
+      height: 1600
+      drive_id: 1EvTGPqeSXvmFaPbswq00XGYIFnRa0a_P
+    - src: /assets/images/gallery/jk-farming/02.jpg
+      thumbnail: /assets/images/gallery/jk-farming/02-thumb.jpg
+      alt: "JK Farming — photo 2"
+      width: 1600
+      height: 1200
+      drive_id: 1ANaZ3aF5S87DCJU4w8BwgJTU2hyVijbX
+    - src: /assets/images/gallery/jk-farming/03.jpg
+      thumbnail: /assets/images/gallery/jk-farming/03-thumb.jpg
+      alt: "JK Farming — photo 3"
+      width: 1600
+      height: 1200
+      drive_id: 1-d1v54mEoUZ19XqVzzgQxwX5evDQjIeJ
+    - src: /assets/images/gallery/jk-farming/04.jpg
+      thumbnail: /assets/images/gallery/jk-farming/04-thumb.jpg
+      alt: "JK Farming — photo 4"
+      width: 1600
+      height: 1200
+      drive_id: 1K9onqwfFlgg0HsVGLulFRaxZwDvJpRVm
+- id: robotics-mentoring
+  title: "Robotics Mentoring"
+  month: January
+  source: https://drive.google.com/drive/folders/1-YvCcZGPS4ph2g5lP0vSjvItPG2mdleX
+  photos: []
+- id: valentines-day-goodies
+  title: "Valentine's Day Goodies"
+  month: February
+  source: https://drive.google.com/drive/folders/1-TOQcKnDBgJTP6BPf-Bna7MQ29ELMfQM
+  photos:
+    - src: /assets/images/gallery/valentines-day-goodies/01.jpg
+      thumbnail: /assets/images/gallery/valentines-day-goodies/01-thumb.jpg
+      alt: "Valentine's Day Goodies — photo 1"
+      width: 739
+      height: 1600
+      drive_id: 1Fan0jR1MxBYdI7xvA0OuZFrEEVp4dOkh
+    - src: /assets/images/gallery/valentines-day-goodies/02.jpg
+      thumbnail: /assets/images/gallery/valentines-day-goodies/02-thumb.jpg
+      alt: "Valentine's Day Goodies — photo 2"
+      width: 739
+      height: 1600
+      drive_id: 1l5eaP1d6agRtD95nU8pCZbdPjjGF5IMQ
