@@ -1,4 +1,3 @@
-# Enable only after Cloudflare DNS, Email Sending, recipient verification,
-# and the Pages runtime secrets have been configured and tested.
-cloudflare_enabled: false
+# Cloudflare sender DNS, recipient verification, and production secrets are configured.
+cloudflare_enabled: true
 turnstile_site_key: "0x4AAAAAAGUy9HL1koweL9j9"
