@@ -70,9 +70,9 @@ permalink: /your-page.html
 
 ## Cloudflare contact email
 
-The Cloudflare integration is staged, not activated. Until `_data/contact.yml` is enabled with a real Turnstile site key, the form continues posting to FormSubmit. The Pages Function at `functions/api/contact.js` only accepts verified contact submissions from the production domains and always sends to `medlifenorthernva@gmail.com`. The sender is `contact@medlifenova.org`; Reply-To is the visitor's validated address. It does not create a mailbox or send automatic replies to visitors.
+The contact form uses Cloudflare Email Sending with a managed Turnstile widget. The Pages Function at `functions/api/contact.js` only accepts verified contact submissions from the production domains and always sends to `medlifenorthernva@gmail.com`. The sender is `contact@medlifenova.org`; Reply-To is the visitor's validated address. It does not create a mailbox or send automatic replies to visitors. Set `cloudflare_enabled: false` in `_data/contact.yml` and redeploy to restore the FormSubmit fallback.
 
-Activation steps:
+Configuration required for deployment:
 
 1. Activate the domain on Cloudflare DNS. Onboard `medlifenova.org` under Email Service → Email Sending and verify its authentication records. Add and verify `medlifenorthernva@gmail.com` under Destination Addresses.
 2. Create a managed Turnstile widget allowing `medlifenova.org`, `www.medlifenova.org`, and `medlifenova.pages.dev`. Store its secret as `TURNSTILE_SECRET_KEY` in the Pages project's production secrets.
