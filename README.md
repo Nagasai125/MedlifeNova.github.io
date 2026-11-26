@@ -25,6 +25,7 @@ Deploy the generated site, not the Liquid source files. For a Git-connected Page
 | Environment | `JEKYLL_ENV=production` |
 | GitHub repository | `PAGES_REPO_NWO=Nagasai125/MedlifeNova.github.io` |
 | Ruby version | `RUBY_VERSION=3.3.4` (matches the validated local Docker build) |
+| Ruby encoding | `RUBYOPT=-EUTF-8:UTF-8` (prevents Sass failures under an ASCII build locale) |
 
 Commit the source pages, `_data`, `_includes`, `_layouts`, `assets`, `_config.yml`, and `Gemfile` before a Git-connected deployment. Select the branch containing those changes as the production branch. A direct upload instead needs the contents of a completed production build; uploading this repository without building leaves Liquid templates unrendered.
 
