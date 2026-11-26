@@ -1,0 +1,36 @@
+{% assign item = include.event %}
+{% assign address = item.listing_address | default: item.address %}
+{% assign link = item.listing_url | default: item.url %}
+<article class="event-sheet mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl bg-white p-4 text-slate-900 sm:p-6 md:flex-row md:gap-9">
+  {% if item.image %}
+  <div class="flex items-center justify-center rounded-2xl bg-slate-50 p-2 md:w-[30%] md:shrink-0">
+    <img class="max-h-80 w-full object-contain" src="{{ item.image | relative_url | escape }}" alt="{{ item.title | escape }} flyer" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="flex min-w-0 flex-1 flex-col justify-center gap-5 md:py-3">
+    <div class="flex items-center gap-4">
+      {% if item.date %}<div aria-hidden="true" class="grid min-w-[4rem] shrink-0 justify-items-center rounded-2xl border border-slate-200 bg-white py-2 leading-none shadow-sm">
+        <span class="text-xs font-bold uppercase tracking-wider text-red-700">{{ item.date | date: '%b' }}</span>
+        <strong class="text-3xl tracking-tight">{{ item.date | date: '%-d' }}</strong>
+      </div>{% endif %}
+      <div><h{{ include.level }} class="text-2xl leading-tight tracking-tight md:text-3xl">{{ item.title | escape }}</h{{ include.level }}>
+      {% if item.partner %}<p class="mt-1 text-sm text-slate-600">{{ item.partner | escape }}</p>{% endif %}</div>
+    </div>
+    <dl class="grid gap-3 sm:grid-cols-2">
+      <div class="rounded-2xl bg-slate-50 p-4"><dt class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-600">When</dt>
+        <dd>{% if item.date %}<time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%A, %B %-d, %Y' }}</time>{% else %}{{ item.date_label | default: 'Date to be announced' | escape }}{% endif %}{% if item.time %}<br><span class="text-sm text-slate-600">{{ item.time | escape }}</span>{% endif %}</dd>
+      </div>
+      {% if item.venue or address %}<div class="rounded-2xl bg-slate-50 p-4"><dt class="mb-1 text-xs font-semibold uppercase tracking-wider text-slate-600">Where</dt>
+        <dd>{% if item.venue %}{{ item.venue | escape }}{% endif %}{% if address %}<span class="block text-sm text-slate-600">{{ address | escape }}</span>{% endif %}</dd>
+      </div>{% endif %}
+    </dl>
+    {% if item.description %}<p class="text-slate-600">{{ item.description | escape }}</p>{% endif %}
+    {% unless item.status == 'past' %}
+      {% if item.offer %}<p class="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-950">{{ item.offer | escape }}</p>{% endif %}
+      {% if link or item.contact %}<div class="flex flex-wrap items-center gap-4">
+        {% if link %}<a class="inline-flex min-h-[44px] items-center rounded-full bg-slate-900 px-6 font-semibold text-white hover:bg-slate-700" href="{{ link | escape }}">{{ item.action | default: 'Event details' | escape }}</a>{% endif %}
+        {% if item.contact %}<p class="text-sm text-slate-600">{{ item.contact | escape }}</p>{% endif %}
+      </div>{% endif %}
+    {% endunless %}
+  </div>
+</article>

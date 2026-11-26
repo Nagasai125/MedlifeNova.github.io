@@ -1,0 +1,16 @@
+- title: MEDLIFE NoVA Blood Drive
+  status: past
+  date: '2025-12-30'
+  time: 9:00 AM - 1:00 PM
+  venue: Curie Learning Ashburn Center
+  address: '20604 Gordon Park Square, Suite #150, Ashburn 21047'
+  url: https://www.redcrossblood.org/give.html/drive-results?zipSponsor=medlifenova
+  # Existing listing differs from the homepage. Confirm with the organizer before merging.
+  listing_address: '20604 Gordon Park Rd, Suite #150 Ashburn, VA 20147'
+  listing_url: https://drive.google.com/file/d/1Kq1Kh7m12_NrbyXmcetUbo2liWPAMRxz/view?usp=sharing
+  image: /assets/images/image.png
+  partner: Partnered with American Red Cross
+  description: Explore Blood Donation Drive by Medlife.
+  offer: Donate Dec 19-Jan 4 & get an exclusive Red Cross T-shirt!
+  contact: Call 1-800-RED-CROSS (1-800-733-2767)
+  action: Schedule Appointment

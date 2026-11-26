@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% assign album = site.data.gallery | where: 'id', page.album_id | first %}
+<section class="gallery-page" aria-labelledby="album-title">
+    <a class="gallery-back" href="{{ '/gallery.html' | relative_url }}">&larr; All editions</a>
+    <header class="gallery-heading">
+        <p class="gallery-eyebrow">{{ album.month | escape }} edition</p>
+        <h1 id="album-title">{{ album.title | escape }}<span>.</span></h1>
+        {% if album.photos.size > 0 %}<p>{{ album.photos.size }} moments from our community. Select a photo to take a closer look.</p>{% endif %}
+    </header>
+    {% if album.photos.size > 0 %}
+    <div class="album-photo-grid">
+        {% for photo in album.photos %}
+        <a class="album-photo" href="{{ photo.src | relative_url }}" data-gallery-photo aria-label="View {{ photo.alt | escape }}">
+            <img src="{{ photo.thumbnail | relative_url }}" alt="{{ photo.alt | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" decoding="async">
+            <span class="album-photo-number" aria-hidden="true">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
+        </a>
+        {% endfor %}
+    </div>
+    <dialog class="gallery-viewer" id="gallery-viewer" aria-labelledby="viewer-title">
+        <div class="gallery-viewer-heading">
+            <h2 id="viewer-title">{{ album.title | escape }}</h2>
+            <button type="button" id="viewer-close" autofocus aria-label="Close photo viewer">Close &times;</button>
+        </div>
+        <figure>
+            <div class="gallery-viewer-image"><img id="viewer-image" alt=""></div>
+            <figcaption class="gallery-viewer-controls">
+                <button type="button" id="viewer-previous" aria-label="Previous photo">&larr; Previous</button>
+                <p id="viewer-status" aria-live="polite" aria-atomic="true"></p>
+                <button type="button" id="viewer-next" aria-label="Next photo">Next &rarr;</button>
+            </figcaption>
+        </figure>
+    </dialog>
+    {% else %}
+    <div class="album-empty">
+        <h2>Photos coming soon</h2>
+        <p>We’re gathering the memories from this edition. Explore another gallery in the meantime.</p>
+        <a class="gallery-back" href="{{ '/gallery.html' | relative_url }}">Browse all editions &rarr;</a>
+    </div>
+    {% endif %}
+</section>
