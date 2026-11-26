@@ -1,3 +1,3 @@
 title: Medlife NoVA
 url: https://medlifenova.org
-exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, functions, tests]

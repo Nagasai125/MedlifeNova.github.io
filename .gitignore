@@ -5,3 +5,6 @@ _site/
 .bundle/
 vendor/bundle/
 .DS_Store
+.dev.vars*
+.env*
+.wrangler/
